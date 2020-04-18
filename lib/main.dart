@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mealdata/category_Screen.dart';
+import 'file:///C:/Users/Wambui/AndroidStudioProjects/meal_data/lib/screens/category_Screen.dart';
+import 'file:///C:/Users/Wambui/AndroidStudioProjects/meal_data/lib/screens/category_meals_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -37,6 +38,12 @@ void main() {
           fontWeight: FontWeight.bold
         ))
     ),
-    home: CategoriesScreen(),
+//    home: CategoriesScreen(),
+//    setting the inital route
+    initialRoute: '/',
+    routes: {
+      '/' : (ctx) => CategoriesScreen(),
+      CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+    },
   ));
 }
