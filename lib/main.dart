@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Wambui/AndroidStudioProjects/meal_data/lib/screens/category_Screen.dart';
-import 'file:///C:/Users/Wambui/AndroidStudioProjects/meal_data/lib/screens/category_meals_screen.dart';
+import 'package:mealdata/screens/category_Screen.dart';
+import 'package:mealdata/screens/category_Screen.dart';
+import 'package:mealdata/screens/category_meals_screen.dart';
+import 'package:mealdata/screens/meal_detail_screen.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     theme: ThemeData(
         primaryColor: Colors.purple[900],
         accentColor: Colors.black,
@@ -44,6 +47,13 @@ void main() {
     routes: {
       '/' : (ctx) => CategoriesScreen(),
       CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+      MealDetailScreen.routeName: (ctx)=> MealDetailScreen(),
     },
+//    reached when flutter fails to reach a screen, its like a 404 fallback page
+    onUnknownRoute: (settings){
+      return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+    },
+
+
   ));
 }
